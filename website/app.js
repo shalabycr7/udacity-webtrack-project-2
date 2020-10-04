@@ -5,7 +5,7 @@ let tempDiv = document.querySelector("#temp");
 let dateDiv = document.querySelector("#date");
 let contDiv = document.querySelector("#content");
 let feelingsDiv = document.querySelector("#feelings");
-let apiKey = ",us&units=metric&appid=63379c7d3c5c8af2eb33ded18fce4737";
+const apiKey = ",us&units=metric&appid=63379c7d3c5c8af2eb33ded18fce4737";
 let baseURL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
 
 
