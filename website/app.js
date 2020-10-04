@@ -5,17 +5,22 @@ let tempDiv = document.querySelector("#temp");
 let dateDiv = document.querySelector("#date");
 let contDiv = document.querySelector("#content");
 let feelingsDiv = document.querySelector("#feelings");
-let apiKey = "63379c7d3c5c8af2eb33ded18fce4737";
-let baseURL = `https://api.openweathermap.org/data/2.5/weather?zip=${zipInput.value},us&appid=${apiKey}`;
+let apiKey = ",us&units=metric&appid=63379c7d3c5c8af2eb33ded18fce4737";
+/*let baseURL = `https://api.openweathermap.org/data/2.5/weather?zip=${zipInput.value},us&appid=${apiKey}`;*/
+
+let baseURL='https://api.openweathermap.org/data/2.5/weather?zip=';
+
 
 // Create a new date instance dynamically with JS
 let d = new Date();
 let newDate = d.getMonth() + "." + d.getDate() + "." + d.getFullYear();
 
 // Get the API data
-async function getApiData(url) {
-   let res = await fetch(url);
+async function getApiData(baseURL,zip,apiKey) {
+   
+   let res = await fetch(baseURL+zip+apiKey);
    let data = await res.json();
+   console.log(data)
    return data;
 }
 // Creat a POST request and send the API date
@@ -62,7 +67,8 @@ genBtn.addEventListener("click", gen);
 function gen() {
    // check if the zip input is valid or not
    if (zipInput.value.trim() !== '') {
-      getApiData(`https://api.openweathermap.org/data/2.5/weather?zip=${zipInput.value},us&units=metric&appid=${apiKey}`)
+      let zipValue=zipInput.value;
+      getApiData(baseURL,zipValue,apiKey)
          .then(apiData => {
             postData('/add', {
                date: newDate,
