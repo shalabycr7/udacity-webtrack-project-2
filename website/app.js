@@ -10,7 +10,7 @@ let baseURL = "https://api.openweathermap.org/data/2.5/weather?zip=";
 
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth() + "." + d.getDate() + "." + d.getFullYear();
+let newDate = d.getDay() + "/" + d.getMonth() + "/" + d.getFullYear();
 
 // Get the API data
 async function getApiData(baseURL, zip, apiKey) {

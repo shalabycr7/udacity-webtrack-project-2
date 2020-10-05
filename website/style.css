@@ -77,9 +77,11 @@ header li {
     background: #303F9F;
     border-radius: 10px;
     margin-bottom: 15px;
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: #C5CAE9;
     border-left: 3px solid #1A237E;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 #formDiv button {
@@ -139,14 +141,20 @@ button:focus {
 ::placeholder {
     /* Firefox, Chrome, Opera */
     color: #C5CAE9;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 :-ms-input-placeholder {
     /* Internet Explorer 10-11 */
     color: #C5CAE9;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 ::-ms-input-placeholder {
     /* Microsoft Edge */
     color: #C5CAE9;
+    font-family: 'Roboto', sans-serif;
+
 }
